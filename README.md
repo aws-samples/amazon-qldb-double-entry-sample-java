@@ -1,15 +1,37 @@
+Table of Contents
+=================
+
+   * [Introduction](#introduction)
+   * [Setup](#setup)
+   * [Tasks](#tasks)
+      * [Setting up the Ledger](#setting-up-the-ledger)
+      * [Setting up the Tables](#setting-up-the-tables)
+      * [TransferMoney](#transfermoney)
+   * [Structure of the repository](#structure-of-the-repository)
+   * [Key takeaways](#key-takeaways)
+   * [Release Notes](#release-notes)
+   * [License](#license)
+   
+
 ## Introduction
 
 This sample app is aimed at demonstrating how to model a double entry financial ledger application with QLDB. We will cover the following topics:
 
-[TOC]
+
+
+
 ## Setup
 
-1. Install Gradle.See [Instructions.](https://gradle.org/install/)
+1. Install Gradle. See [Instructions.](https://gradle.org/install/)
+
 2. Clone the sample app using the following command
-`git clone https://github.com/aws-samples/amazon-qldb-double-entry-sample-java`
+
+   `git clone https://github.com/aws-samples/amazon-qldb-double-entry-sample-java`
+
 3. Make sure you have valid AWS credentials setup. The AWS SDK used in the app will load the credentials automatically as long as you have setup the credentials using one of the methods mentioned in [setup-credentials guide](http://docs.aws.amazon.com/java-sdk/latest/developer-guide/setup-credentials.html)
+
 4. Run the gradle tasks
+
    `./gradlew run -Dtask=<NameOfTheTask>`
 
 ## Tasks
@@ -22,6 +44,7 @@ There are three tasks in the sample which help you understand how to use Amazon 
 ### Setting up the Ledger
 
 To run this task, do
+
 
 `./gradlew run -Dtask=SetupLedger`
 
@@ -68,12 +91,13 @@ For this sample app, we have three tables:
 
 The attributes of the tables are
 
-| Businesses          | Accounts | Transactions |
-| ------------------- |                                |--------|
-| Name                |Account Id|Sender Account Entry\*|
-| Registered Address |Business Id|Receive Account Entry\*|
-| Business Id        |Account Type||
-| Date of registration         |Balances||
+ Businesses          | Accounts | Transactions 
+------------------- | ---------- | --------
+ Name                | Account Id | Sender Account Entry\*
+ Registered Address | Business Id | Receive Account Entry\*
+ Business Id        | Account Type | 
+ Date of registration         | Balances |
+ 
 
 \*The sender account and receiver account entries will each have following attributes
 
@@ -114,7 +138,7 @@ To transfer the amount we perform the following steps as a part of a single Amaz
 When there are multiple transfers happening in the system, if there is an OCC while committing the transaction, then the QLDB Driver (or specifically, QLDB session) takes care of retrying the
 entire transaction. The failed transaction will start again from, reading the balances, doing the business validations again with the new values, and then updating the balances to the correct values. If this attempt fails as well, the driver will retry all over again.
 
-The driver will keep retrying till either the transaction succeeds or it hits the maximum retry attempt limit (specified when instantiating the PooledQLDBDriver).
+The driver will keep retrying till either the transaction succeeds or it hits the maximum retry attempt limit (specified when instantiating the *PooledQLDBDriver*).
 
 
 
