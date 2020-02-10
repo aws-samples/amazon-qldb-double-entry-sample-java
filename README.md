@@ -1,7 +1,11 @@
+## Amazon QLDB Double Entry Sample App
+
+This sample app is aimed at demonstrating how to model a double entry financial ledger application with QLDB. 
+
 Table of Contents
 =================
 
-   * [Introduction](#introduction)
+   * [Amazon QLDB Double Entry Sample App](#amazon-qldb-double-entry-sample-app)
    * [Setup](#setup)
    * [Tasks](#tasks)
       * [Setting up the Ledger](#setting-up-the-ledger)
@@ -12,14 +16,6 @@ Table of Contents
    * [Release Notes](#release-notes)
    * [License](#license)
    
-
-## Introduction
-
-This sample app is aimed at demonstrating how to model a double entry financial ledger application with QLDB. We will cover the following topics:
-
-
-
-
 ## Setup
 
 1. Install Gradle. See [Instructions.](https://gradle.org/install/)
