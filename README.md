@@ -2,7 +2,7 @@
 
 This sample app is aimed at demonstrating how to model a double entry financial ledger application with QLDB. 
 
-Table of Contents
+## Table of Contents
 =================
 
    * [Amazon QLDB Double Entry Sample App](#amazon-qldb-double-entry-sample-app)
