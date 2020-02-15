@@ -119,7 +119,7 @@ To run this task, do
 This task also takes additional argument to indicate the kind of transfer to be done. There are two types supported:
 
 1. **runSingleTranfer**: This demonstrates a simple use case of making only one transfer between two accounts. There are no conflicting transfers happening in the system.
-2. **runParallelTransfers**: This demonstrates a complex use case of multiple transfers (3 in this case) happening at the same time between 3 accounts. Some transfers might run into [OCC errors] (https://docs.aws.amazon.com/qldb/latest/developerguide/concurrency.html)
+2. **runParallelTransfers**: This demonstrates a complex use case of multiple transfers (3 in this case) happening at the same time between 3 accounts. Some transfers might run into [OCC errors](https://docs.aws.amazon.com/qldb/latest/developerguide/concurrency.html)
 
 To transfer the amount we perform the following steps as a part of a single Amazon QLDB transaction
 
