@@ -25,7 +25,11 @@ This sample app is aimed at demonstrating how to model a double entry financial 
 
 3. Make sure you have valid AWS credentials setup. The AWS SDK used in the app will load the credentials automatically as long as you have setup the credentials using one of the methods mentioned in [setup-credentials guide](http://docs.aws.amazon.com/java-sdk/latest/developer-guide/setup-credentials.html)
 
-4. Run the gradle tasks
+4. Build the project
+
+   `./gradlew build`
+
+5. Run the gradle tasks
 
    `./gradlew run -Dtask=<NameOfTheTask>`
 
@@ -114,12 +118,12 @@ Read more about QLDB indexes in our [developer guide](https://docs.aws.amazon.co
 
 To run this task, do
 
-`./gradlew run -Dtask=TransferMoney --args <Name of the Argument Eg: runSingleTransfer>` 
+`./gradlew run -Dtask=TransferMoney --args <Name of the Argument Eg: singleTransfer>` 
 
 This task also takes additional argument to indicate the kind of transfer to be done. There are two types supported:
 
-1. **runSingleTranfer**: This demonstrates a simple use case of making only one transfer between two accounts. There are no conflicting transfers happening in the system.
-2. **runParallelTransfers**: This demonstrates a complex use case of multiple transfers (3 in this case) happening at the same time between 3 accounts. Some transfers might run into [OCC errors](https://docs.aws.amazon.com/qldb/latest/developerguide/concurrency.html)
+1. **singleTransfer**: This demonstrates a simple use case of making only one transfer between two accounts. There are no conflicting transfers happening in the system.
+2. **parallelTransfers**: This demonstrates a complex use case of multiple transfers (3 in this case) happening at the same time between 3 accounts. Some transfers might run into [OCC errors](https://docs.aws.amazon.com/qldb/latest/developerguide/concurrency.html)
 
 To transfer the amount we perform the following steps as a part of a single Amazon QLDB transaction
 
