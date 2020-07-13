@@ -25,7 +25,11 @@ This sample app is aimed at demonstrating how to model a double entry financial 
 
 3. Make sure you have valid AWS credentials setup. The AWS SDK used in the app will load the credentials automatically as long as you have setup the credentials using one of the methods mentioned in [setup-credentials guide](http://docs.aws.amazon.com/java-sdk/latest/developer-guide/setup-credentials.html)
 
-4. Run the gradle tasks
+4. Build the project
+
+   `./gradlew build`
+
+5. Run the gradle tasks
 
    `./gradlew run -Dtask=<NameOfTheTask>`
 
